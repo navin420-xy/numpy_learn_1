@@ -1,0 +1,733 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "ef8e4a20-34c4-454a-8bbc-ed90b46b845f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "ddc291ac-e73c-4b36-9489-d068c484336b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy funcation in numpy \n",
+    "# one arry copy to another array \n",
+    "array=np.array([10,20,30,40,50])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "a88bbffe-2337-4ad7-9e30-9ad5d5648506",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[78 14  3 46 49 37 74 82 69 65 16 69 20 21 77 37 45 30 78 34 42 16 38 86\n",
+      " 79 37 55 43 33 21 35 77 70 87  8 42 45 82 60  5 98 68 50  8 39 63 12 63\n",
+      " 76 63 69 88 30 91 37 51 34 86  8 61 71 87 24 69 58 62 31 92 87 26 29 27\n",
+      " 15 45 84 80 48 64 97 96 50 17 74 25 59 60 71 79 77 40 31 87 79 27 24 72\n",
+      " 89 30 81 43]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# array first \n",
+    "arr1 = np.random.randint(1, 100, size=100)\n",
+    "print(arr1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "4b8f960f-73f7-4cd5-a64f-045eb3143040",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[17 16 79 63 83 32 16 97  4 36  3 16 94 90 92 31 89 20 77 27 74 43 93 67\n",
+      " 58 96 31 22 65 38 28 52 99 75 22 37 23 78  9 84 47 73 25 33 78 30 36  2\n",
+      "  2 78  8 67 93 37 97  9 38 54 33 80 15 68 22 24 57 55 36 96 34 60 13 37\n",
+      "  2  8  7 99 34 90 53 33 75 83 56 81 31 95 33 36 65 18 76  6 69 56 88 40\n",
+      " 20 45 99  4]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# array second \n",
+    "arr2 = np.random.randint(1, 100, size=100)\n",
+    "print(arr2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "ff8ca829-e200-4758-a3cd-b68e1aa85571",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy array arr1 inside arr2\n",
+    "arr1=arr2.copy()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "b28a31e1-1628-4f31-9f5b-12c96817f386",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([17, 16, 79, 63, 83, 32, 16, 97,  4, 36,  3, 16, 94, 90, 92, 31, 89,\n",
+       "       20, 77, 27, 74, 43, 93, 67, 58, 96, 31, 22, 65, 38, 28, 52, 99, 75,\n",
+       "       22, 37, 23, 78,  9, 84, 47, 73, 25, 33, 78, 30, 36,  2,  2, 78,  8,\n",
+       "       67, 93, 37, 97,  9, 38, 54, 33, 80, 15, 68, 22, 24, 57, 55, 36, 96,\n",
+       "       34, 60, 13, 37,  2,  8,  7, 99, 34, 90, 53, 33, 75, 83, 56, 81, 31,\n",
+       "       95, 33, 36, 65, 18, 76,  6, 69, 56, 88, 40, 20, 45, 99,  4],\n",
+       "      dtype=int32)"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "1501c362-fd65-409f-a432-5a4c7743bc90",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(100,)"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# numpy attributes and property\n",
+    "# 1 shape==> return the shape of the array (row,column)\n",
+    "arr1.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "11d3e7f9-9292-4101-b457-2296f9ec0e9a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[[1, 2, 3],\n",
+       "        [4, 5, 6],\n",
+       "        [7, 8, 9]]])"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "array4=np.array([[[1,2,3],[4,5,6],[7,8,9]]])\n",
+    "array4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "1fdcb3aa-3e79-4c2a-a6c7-e5478a38391c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3"
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# ndim this is a return the number od dimension (axes) to the array\n",
+    "# for example 1d 2d nd array\n",
+    "array4.ndim"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "58cff817-229a-4cf5-b672-e1bc29d58e53",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5"
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# size ==> return the total number or element in the array\n",
+    "# size ==> return size\n",
+    "arr3=np.array([10,20,30,40,50])\n",
+    "arr3\n",
+    "arr3.size"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "481d53d1-ca8c-4e45-8c57-fefdf23ba46d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "9"
+      ]
+     },
+     "execution_count": 45,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# size 3d array\n",
+    "array4=np.array([[[1,2,3],[4,5,6],[7,8,9]]])\n",
+    "array4.size"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "id": "0f21cbd5-6828-42db-b3f8-94d3592ff5c2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "8"
+      ]
+     },
+     "execution_count": 50,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# itemsize ===> return the size (in bytes) of each element attribute \n",
+    "# int size for \n",
+    "arr3=np.array([10,20,30,40,50])\n",
+    "type(arr3.itemsize)\n",
+    "arr3.itemsize\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "4b965871-a0bb-45ca-bd18-34ac121a338e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([17, 16, 79, 63, 83, 32, 16, 97,  4, 36,  3, 16, 94, 90, 92, 31, 89,\n",
+       "       20, 77, 27, 74, 43, 93, 67, 58, 96, 31, 22, 65, 38, 28, 52, 99, 75,\n",
+       "       22, 37, 23, 78,  9, 84, 47, 73, 25, 33, 78, 30, 36,  2,  2, 78,  8,\n",
+       "       67, 93, 37, 97,  9, 38, 54, 33, 80, 15, 68, 22, 24, 57, 55, 36, 96,\n",
+       "       34, 60, 13, 37,  2,  8,  7, 99, 34, 90, 53, 33, 75, 83, 56, 81, 31,\n",
+       "       95, 33, 36, 65, 18, 76,  6, 69, 56, 88, 40, 20, 45, 99,  4],\n",
+       "      dtype=int32)"
+      ]
+     },
+     "execution_count": 51,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# dtype==> return the data type of the array element \n",
+    "arr1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "9a7f8418-5434-41c3-b903-a3a3d1a43372",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dtype('int32')"
+      ]
+     },
+     "execution_count": 53,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# using dtype\n",
+    "# dtype('int32')\n",
+    "arr1.dtype"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "e5982e9a-f174-4a9b-9714-5e5d695a4035",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# astype ===> this is a type coverse data int that change float "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "id": "bf7061d6-5159-46d8-af2c-5882624bb77e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<function ndarray.astype>"
+      ]
+     },
+     "execution_count": 63,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "array4.astype"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "id": "8a88f26a-08f2-4724-9f85-d681983636d9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# numpy array and vs python list \n",
+    "# memory space list array \n",
+    "list=range(100)\n",
+    "array1=np.array(100)\n",
+    "# python list        vs                       numpy array\n",
+    "# bulid in python data structrue             provied by numpy library\n",
+    "# can store different data type               usually store only one type data type\n",
+    "# slower for calucation                    fast for calucation \n",
+    "# use more memory                       use less memory"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "id": "5142c996-f691-498b-9179-dfbe2b13c9b0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# reshape funcation ===> used to change the same (dimesion) of an array without change its value \n",
+    "array10=np.array([10,20,30,40])\n",
+    "new_arry=array10.reshape(2,2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "id": "9b97acd2-68e6-4739-bd2c-1f1f332159f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[10, 20],\n",
+       "       [30, 40]])"
+      ]
+     },
+     "execution_count": 82,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "new_arry"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "id": "412dc3ff-d332-4514-9d7c-e594ac0ba778",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.int64(30)"
+      ]
+     },
+     "execution_count": 85,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# using indixeing slicing and iteration \n",
+    "# 1 indexing ==> used to acces a specific element from an usion positive (index) 1 2 4 5)\n",
+    "array7=np.array([10,20,30,40,50])\n",
+    "array7[2] # this is positive indexing \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "id": "46be62e3-c6c3-4866-baaa-8d9acb65c335",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.int64(50)"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# negetive indexing \n",
+    "array7[-1] # thos is negetive indexing \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 99,
+   "id": "5b1621a9-0af7-4ca5-8464-3f40937ab7fc",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "numpy.ndarray"
+      ]
+     },
+     "execution_count": 99,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# slicing is used access a range of element from an array \n",
+    "array7[::-1] # revras array \n",
+    "# multiple slicing allow \n",
+    "array[1:3:2]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 101,
+   "id": "194fd56a-b040-43a4-b0bc-d749dccf1575",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n",
+      "20\n",
+      "30\n",
+      "40\n",
+      "50\n"
+     ]
+    }
+   ],
+   "source": [
+    "# iterating ==> means traversing each element of an array on by using loops\n",
+    "for i  in array7:\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "id": "9f90fad7-ecf0-4c83-a08a-70f6e1abc34c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "odd==> 1\n",
+      "even==> 2\n",
+      "odd==> 3\n",
+      "even==> 4\n",
+      "odd==> 5\n",
+      "even==> 6\n",
+      "even==> 8\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1 question print using loop even/odd number \n",
+    "array_nu=np.array([1,2,3,4,5,6,8])\n",
+    "array_nu\n",
+    "for i in array_nu:\n",
+    "    if i %2==0:\n",
+    "        print(\"even==>\",i)\n",
+    "    else:\n",
+    "        print(\"odd==>\",i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 119,
+   "id": "311f52cb-a8ca-44fd-b6f7-204c314fff31",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[ 6  8 10 12]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# numpy operations ==> numpy operation are mathmatical operations performed directly on numbpy \n",
+    "# add two array \n",
+    "array_1=np.array([1,2,3,4]) \n",
+    "array_2=np.array([5,6,7,8])\n",
+    "print(array_1 + array_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 121,
+   "id": "f8fe14b9-34df-4c22-9faa-2db3c0f8eda5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[-4 -4 -4 -4]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# subtraction \n",
+    "array_1=np.array([1,2,3,4]) \n",
+    "array_2=np.array([5,6,7,8])\n",
+    "print(array_1  - array_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 124,
+   "id": "caf596d1-53d0-4cae-8047-693965bc9322",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.int64(10)"
+      ]
+     },
+     "execution_count": 124,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# sum using \n",
+    "array_1=np.array([1,2,3,4])  \n",
+    "np.sum(array_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 126,
+   "id": "3f9e1ea3-4834-4bb9-b329-d47017e04496",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.int64(1)"
+      ]
+     },
+     "execution_count": 126,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# maxium \n",
+    "# minimum\n",
+    "np.max(array_1)\n",
+    "np.min(array_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 130,
+   "id": "851b6a64-aec5-4161-825e-3c6546314093",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.float64(2.5)"
+      ]
+     },
+     "execution_count": 130,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# mediam \n",
+    "np.median(array_1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 132,
+   "id": "6ed72aac-fbcf-4922-9b4c-65bf451ae423",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "np.float64(6.5)"
+      ]
+     },
+     "execution_count": 132,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# mean\n",
+    "np.mean(array_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 155,
+   "id": "64311e11-4fc7-4c4e-af66-143cab4720e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 2 3]\n",
+      " [4 5 6]] [[1 2 3]\n",
+      " [4 5 6]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# using ===>(axis)<== clon the axis funcation \n",
+    "import matplotlib.pyplot as plot\n",
+    "\n",
+    "a=np.array([[1,2,3],[4,5,6]])\n",
+    "b=np.array([[1,2,3],[4,5,6]])\n",
+    "a.min(axis=0)\n",
+    "b.min(axis=1)\n",
+    "print(a,b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 158,
+   "id": "28f0adec-973a-4bd1-8863-fc5211f23851",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([17, 16, 79, 63, 83, 32, 16, 97,  4, 36,  3, 16, 94, 90, 92, 31, 89,\n",
+       "       20, 77, 27, 74, 43, 93, 67, 58, 96, 31, 22, 65, 38, 28, 52, 99, 75,\n",
+       "       22, 37, 23, 78,  9, 84, 47, 73, 25, 33, 78, 30, 36,  2,  2, 78,  8,\n",
+       "       67, 93, 37, 97,  9, 38, 54, 33, 80, 15, 68, 22, 24, 57, 55, 36, 96,\n",
+       "       34, 60, 13, 37,  2,  8,  7, 99, 34, 90, 53, 33, 75, 83, 56, 81, 31,\n",
+       "       95, 33, 36, 65, 18, 76,  6, 69, 56, 88, 40, 20, 45, 99,  4],\n",
+       "      dtype=int32)"
+      ]
+     },
+     "execution_count": 158,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e1152405-0c8b-477d-b7b0-78879a346ba7",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
